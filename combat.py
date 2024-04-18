@@ -105,5 +105,3 @@ def combatloop():
             print("GAME OVER")     
             break
 
-combatguide()
-combatloop()

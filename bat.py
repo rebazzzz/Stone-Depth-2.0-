@@ -1,5 +1,7 @@
 import time, os
 
+
+
 enemy_hp = 85
 player_hp = 100
 pickaxe_dmg = 25
@@ -89,7 +91,8 @@ def spelare_attack():
 
 
 def bat():
-    print("Screeeee!")
+    global spelare
+    print(""" Screeeee!""")
 
     time.sleep(2)
     print("Du hör ett svagt susande ljud i fjärran, som om något mörkt närmar sig.")
@@ -126,9 +129,6 @@ def bat():
     ##*            -##=              =###################-                   =##-            *##
                                        =*##########*+-               
  """)
-    print("""Med en plötslig och grym attack känner du dess vassa klor nära din hud. Striden är igång och baten angriper med vild aggressivitet.
-          
-          """)
 
 
 def combatguide():
@@ -164,7 +164,7 @@ def combatloop():
             print("GAME OVER")
             break
 
-bat()
-combatguide()
-combatloop()
+def forsta_enemy():
+    combatguide()
+    combatloop()
 
