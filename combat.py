@@ -2,8 +2,8 @@
 import random, time
 
 #variabel
-enemy_hp = 600
-player_hp = 1000
+enemy_hp = 60
+player_hp = 120
 pickaxe_dmg = 25
 yxa_dmg = 40
 magisktlubba_dmg = 50
@@ -59,34 +59,32 @@ def spelare_attack():
             print("💔")
             print(f"Enemy HP: {enemy_hp}")
 
-    elif attack == 3 and magisktlubba_uses <= 3:
-        enemy_hp -= magisktlubba_dmg
-        magisktlubba_uses = magisktlubba_uses + 1
-        if enemy_hp < 0:
-            print(f"Enemy är död!")
-        else:
+    elif attack == 3 and magisktlubba_uses < 1:
+         enemy_hp -= magisktlubba_dmg
+         magisktlubba_uses += 1
+    
+         if enemy_hp <= 0:
             print("💔")
-            print(f"Enemy HP: {enemy_hp}")
-            #⚔️🦴💥
-        
+            print("Enemy är död!")
+         
+         else:
+             print("💔")
+             print(f"Enemy HP: {enemy_hp}")
 
-    elif attack == 3 and magisktlubba_uses > 3: 
-        vapen.pop("Magisktlubba 🍭✨")
-        list(vapen.keys())
-        
-        
+    elif attack == 3 and magisktlubba_uses == 1:
+        print("Motståndaren sparkade iväg din magiska klubba, så du kan inte använda den för tillfället.")
+          
     else:
         print("Använd rätt vapen!")
 
 
 #spelguide innan man börjar spela
 def combatguide():
+   global vapen
    print("Din arsenal:")
    for i, weapon in enumerate(inventory, 1):
       print(f"{i}. {weapon}, Skada: {vapen[weapon]['dmg']}")
       time.sleep(1)
-    #print(f"Din pickaxe gör 25 damage, yxan gör 30 och den magiska klubban gör 35!")
-    #time.sleep(2)
     
 #loop för combat mellan spelaren och enemy tils en dör
 def combatloop():
@@ -95,7 +93,10 @@ def combatloop():
         spelare_attack()
         time.sleep(0.5)
         if enemy_hp <= 0:
-            print("Raslande benen faller och en nyckel ligger på marken.")
+            print("Jag ändrar detta i modulen")
+            print("Du springer och plockar upp din magiska klubba.")
+            vapen.append("Magisktlubba 🍭✨")
+            print(vapen)
             break
 
         enemy_attack()
