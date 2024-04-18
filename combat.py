@@ -2,11 +2,12 @@
 import random, time
 
 #variabel
-enemy_hp = 60
-player_hp = 120
+enemy_hp = 600
+player_hp = 1000
 pickaxe_dmg = 25
 yxa_dmg = 40
 magisktlubba_dmg = 50
+magisktlubba_uses = 0
 
 vapen = {
     "Pickaxe 🪓": {"dmg": 25},
@@ -15,6 +16,7 @@ vapen = {
 }
 
 inventory = list(vapen.keys())
+
 
 # Meddelande när spelaren skriver fel input
 def fel_combat_input():
@@ -34,7 +36,9 @@ def enemy_attack():
 #funktion för spelare attack mot enemy
 def spelare_attack():
     """Spelaren attackerar enemy genom att välja vapen i sin arsenal"""
-    global enemy_hp    
+    global enemy_hp   
+    global magisktlubba_uses 
+    global vapen
     attack = int(input("Ange siffran till vapnet du vill attackera med:\n"))
 
     if attack == 1:
@@ -55,16 +59,22 @@ def spelare_attack():
             print("💔")
             print(f"Enemy HP: {enemy_hp}")
 
-    elif attack == 3 and magisktlubba_cd == 1:
+    elif attack == 3 and magisktlubba_uses <= 3:
         enemy_hp -= magisktlubba_dmg
-        magisktlubba_cd = magisktlubba_cd + 1
-
+        magisktlubba_uses = magisktlubba_uses + 1
         if enemy_hp < 0:
             print(f"Enemy är död!")
         else:
             print("💔")
             print(f"Enemy HP: {enemy_hp}")
             #⚔️🦴💥
+        
+
+    elif attack == 3 and magisktlubba_uses > 3: 
+        vapen.pop("Magisktlubba 🍭✨")
+        list(vapen.keys())
+        
+        
     else:
         print("Använd rätt vapen!")
 
