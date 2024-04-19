@@ -95,7 +95,7 @@ def skelet():
 
     time.sleep(2)
     print("""
-          Du hör en mörk röst eka genom korridoren när skelettet träd fram ur skuggorna, redo för strid.""")
+          Du hör en mörk röst eka genom korridoren när skelettet träd fram ur skuggorna.""")
 
     time.sleep(3)
     print("""
