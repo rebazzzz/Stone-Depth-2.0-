@@ -73,3 +73,4 @@ def lavaskelet_combatloop():
             print("GAME OVER")
             break
 
+lavaskelet_combatloop()
