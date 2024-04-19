@@ -92,7 +92,7 @@ intro()
 bat.bat()
 print(f"""
       Med en plötslig och grym attack känner du dess vassa klor nära din hud.
-      Fladdermusen hotar: Jag vet vem du är {spelare}. 
+      Fladdermusen hotar: Jag vet varför du är här {spelare}. 
       Jag kommer suga ut allt ditt blod!
         
     """)
@@ -123,3 +123,95 @@ def skelet_dialog():
         time.sleep(0.05)
 skelet_dialog()
 skelet2_0.andra_enemy()
+
+def draku_intro():
+    text = f"""
+    Djupare in i grottan möter du en mystisk staty med namnet Draku Sraku. 
+    Dess ögon lyser i mörkret när den plötsligt talar till dig. "Jag vet allt om dig, {spelare}" säger den med en viskande röst.
+
+    Du: Hur kan jag lita på dig?
+    Draku: Jag vet varför du är här. Din familj skickade dig hit för att bli av med dig!
+    Ingen i tusentals år har lyckats att döda monstret i den här grottan.
+    Din familj lurade dig!
+
+    Du: Hur kunde dem göra så mot mig?! 😭😭
+     
+    Draku: Följ mig, och jag ska visa dig vägen till ett ställe i grottan där du kan finna bättre loot. 
+    Det kommer att hjälpa dig att besegra din sista fiende och ta dig ut i grottan levandes. 
+    
+    Du känner en blandning av spänning och oro när du följer statyn in i djupet av grottan, med förhoppningen om att den har svaren och resurserna du behöver för att överleva.
+    """
+    print("""           )        )
+                  (  (|              .
+              )   )\/ ( ( (
+      *  (   ((  /     ))\))  (  )    )
+    (     \   )\(          |  ))( )  (|
+    >)     ))/   |          )/  \((  ) 1
+    (     (      .        -.     V )/   )(    (
+     \   /     .   \            .       \))   ))
+       )(      (  | |   )            .    (  /
+      )(    ,'))     \ /          \( `.    )
+      (\>  ,'/__      ))            __`.  /
+     ( \   | /  ___   ( \/     ___   \ | ( (
+      \.)  |/  /   \__      __/   \   \|  ))
+     .  \. |>  \      | __ |      /   <|  /
+          )/    \____/ :..: \____/     \ <
+   )   \ (|__  .      / ;: \          __| )  (
+  ((    )\)  ~--_     --  --      _--~    /  ))
+   \    (    |  ||               ||  |   (  /
+         \.  |  ||_             _||  |  /
+           > :  |  ~V+-I_I_I-+V~  |  : (.
+          (  \:  T\   _     _   /T  : ./
+           \  :    T^T T-+-T T^T    ;<
+            \..`_       -+-       _'  )
+  )            . `--=.._____..=--'. ./     """)
+    for ord in text:
+        print(ord, end='', flush=True)
+        time.sleep(0.05)
+
+def draku_outro():
+    text = f"""
+    Precis innan du når ingången vänder Draku plötsligt om och säger: "Innan jag kan släppa in dig måste du svara på en gåta.
+    Svara med bara siffror annars straffar jag dig!"
+    """
+    for ord in text:
+        print(ord, end='', flush=True)
+        time.sleep(0.05)
+    while True:
+     gata = int(input("Vilket år är Stone Depth skaparen Rebaz född?"))
+     if gata == 2006:
+        print("""
+        Grattis du svarade rätt på gåtan. 
+        Nu kan jag släppa in dig!
+        Hoppas att looten du får här hjälper dig att besegra monstret.
+            """)
+        break
+     elif gata == 2001:
+         print("9/11 Joke how original 😐")
+
+     elif gata <= 1900:
+         ban = input("Är du dum i huvudet?").lower()
+         if ban == "ja":
+             
+             while True:
+                 print("Då ska jag krascha spelet åt dig!")
+                
+         elif ban == "nej":
+             print("Bäst för dig!")
+         else:("Svara ja/nej din idiot!")
+
+     elif gata >= 2100:
+          bann = input("Är du dum i huvudet?").lower()
+          if bann == "nej":
+              print("Bäst för dig!")
+          elif bann == "ja":
+              while True:
+                  print("Då ska jag krascha spelet åt dig!")
+          else:
+              ("Svara ja/nej din idiot!")
+     else:
+         print("Gissa igen!")
+            
+
+draku_intro()
+draku_outro()

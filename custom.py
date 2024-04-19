@@ -176,3 +176,5 @@ def char_sel():
             print("Ange 1 eller 2")
 
 
+
+
