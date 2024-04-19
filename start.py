@@ -1,4 +1,4 @@
-import time, bat
+import time, bat, custom
 spelare = ""
 def title():
     print("""
@@ -13,14 +13,30 @@ def title():
           """)
 title()
 
+def start_screen():
+    text = f"""
+    Du har blivit tilldelad en uppdrag av din familj att utforska denna grotta, 
+    upptäcka dess hemligheter och återvända med "Monstrets hjärta" för att få leva med dem.
+    De har gett dig med en fackla och några vapen för att hjälpa dig överleva i grottan.
+    Du stiger in i grottan, vars mörker omsluter dig som en tätnande dimma...
+    """
+    for ord in text:
+        print(ord, end='', flush=True)
+        time.sleep(0.05)
+start_screen()
+
+
+
+custom.char_sel()
 def namn():
     global spelare
-    spelare = input("Vad heter du kära spelare?\n")
+    print("Men innan vi fortsätter behöver du ge ett namn till din karaktär.")
+    spelare = input("Vad vill du att karaktären ska heta?")
 namn()
 
 def intro():
     text = f"""
-    Välkommen till Grottan av Evigheten {spelare}. Mörkret här är tjockt, och dess hemligheter är lika mystiska som farliga. 
+    ...Välkommen till Grottan av Evigheten {spelare}. Mörkret här är tjockt, och dess hemligheter är lika mystiska som farliga. 
     Legender talar om skatter och skräckinjagande varelser som gömmer sig i de mörka skuggorna. Men du är inte rädd. 
     Du är redo att utforska, att upptäcka, och kanske till och med att överleva. 
     Din resa börjar nu. Ta dig ut LEVANDE!
