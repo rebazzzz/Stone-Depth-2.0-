@@ -1,4 +1,4 @@
-import time, bat, custom
+import time, bat, custom, skelet2_0
 spelare = ""
 def title():
     print("""
@@ -30,7 +30,7 @@ start_screen()
 custom.char_sel()
 def namn():
     global spelare
-    print("Men innan vi fortsätter behöver du ge ett namn till din karaktär.")
+    print("Innan vi fortsätter behöver du ge ett namn till din karaktär.")
     spelare = input("Vad vill du att karaktären ska heta?")
 namn()
 
@@ -55,5 +55,9 @@ print(f"""
       Jag kommer suga ut allt ditt blod!
         
     """)
+
+print
+
 bat.forsta_enemy()
 
+skelet2_0.andra_enemy()

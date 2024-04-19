@@ -161,15 +161,18 @@ def char_sel():
     time.sleep(2)
     print("""Välj en karaktär för att starta spelet!""")
     char()
-    char_choice = int(input("För att välja din karaktär, ange siffran som motsvarar din valda karaktär:"))
-    if char_choice == 1:
-        print("""**Karaktär vald**
-""")
-    elif char_choice == 2:
-        print("""**Karaktär vald**
-""")
-    else:
-        print("Ange 1 eller 2")
+    while True:
+        char_choice = int(input("För att välja din karaktär, ange siffran som motsvarar din valda karaktär:"))
+        if char_choice == 1:
+            print("""**Karaktär vald**
+""")    
+            break
 
+        elif char_choice == 2:
+            print("""**Karaktär vald**
+""")    
+            break
+        else:
+            print("Ange 1 eller 2")
 
 

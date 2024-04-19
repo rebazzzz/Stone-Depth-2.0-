@@ -10,7 +10,7 @@ magisktlubba_uses = 0
 vapen = {
     "Pickaxe 🪓": {"dmg": 25},
     "Yxa 🔨": {"dmg": 35},
-    "Magisktlubba 🍭✨": {"dmg": 55}
+    "Magisktlubba 🍭✨": {"dmg": 50}
 }
 
 inventory = list(vapen.keys())
@@ -26,7 +26,7 @@ def spelare_HP():
 
 def enemy_attack():
     global player_hp
-    damage = 25
+    damage = 20
     player_hp -= damage
     if player_hp < 0:
         print(f"Du dog 💀")
