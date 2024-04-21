@@ -143,8 +143,7 @@ def char_2():
      %#-+%%+  #%%%%%%#%%%%@%@%%%%@@@@@@%%%    %%%%%@
              %%%%%%%@%%%%%@@%@%%%%%%@@@%%%    %+@%%%
             -%%%%%%%%%%%%@%%%%%%%%%@%@%%@%    #@%%*+
-           *%%%%%%%%%%%%%%%%%%%%%#%%%@@@%%  #%%*
-                %%%%%%%%%%%%%%%%%%%%%%%%%%%%@%%#
+           *%%%%%%%%%%%%%%%%%%%%%#%%%@@@%%  #%%*                %%%%%%%%%%%%%%%%%%%%%%%%%%%%@%%#
                 %%%#%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%%%%%%%%%%%%%%%%%%%%%%@%
                 *%%@@@@@%%%%%%%%%%%%%%%%%%@@#
@@ -176,5 +175,41 @@ def char_sel():
             print("Ange 1 eller 2")
 
 
+def loot():
+    text = """
+    Du går in. Där, inbäddat i skuggorna, skymtar en kista som glimmar i det svaga ljuset. 
+    Du närmar dig kistan, känslan av spänning och förväntan bubblar inom dig när du öppnar locket.
+    I den finner du en scroll som avslöjar en skrämmande hemlighet: 
+    Monstret är inte vad det verkar vara. Det är grottan själv som orsakar hallucinationer, och det finns ingen känd metod för att besegra den. 
+    Det är en säker död om du möter den.
+    """
+
+    for ord in text:
+        print(ord, end='', flush=True)
+        time.sleep(0.05)
 
 
+def ending():
+    text = """
+    Så fort du läser den förvandlas grottan till ditt barndomshem. En röst talar till dig och påminner om vad som står på spel. 
+    Du ser att valet är ditt: 
+    Antingen ge upp och fly, och riskera att bli betraktad som en fegis, eller fortsätta framåt och möta din säkra död i striden. 
+    Men då blir du en hjälte och familjens stolthet.
+    Men är det värt att offra dig för din familjs stolthet, särskilt om det var de som ville bli av med dig?
+    """
+    for ord in text:
+        print(ord, end='', flush=True)
+        time.sleep(0.05)
+
+    while True:
+        fegis = int(input("Valet är ditt vill du: \n1. Dö som en hjäte? \n2. Leva som en fegis?"))
+        if fegis == 2:
+            print("Monstret öppnar upp en väg som leder direkt hem, men när familjen ser att du har flytt så samlar de byn och markerar dig som fredlös.")
+            break
+        if fegis == 1:
+            print("Innan du hinner reagera exploderar ditt huvud och du faller livlös till marken. När flera dagar går utan att du dyker upp i byn reser de en staty till dig för att minnas dig som en hjälte och för att hedra dig.")
+            break
+        else:
+            print("Du kan inte undvika att fatta ett beslut! Skriv 1 eller 2")
+
+ending()

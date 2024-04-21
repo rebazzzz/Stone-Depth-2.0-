@@ -25,11 +25,11 @@ def credits():
         "Credits:",
         "Inspiration: Stone Depth",
         "Huvudutvecklare: Rebaz Abdul Rashid",
-        "Story: Rebaz Abdul Rashid, Velkjo Jovic, David Wroblewski & ChatGPT",
-        "Design: Rebaz Abdul Rashid & Veljko Jovic",
+        "Story: Rebaz Abdul Rashid & ChatGPT",
+        "Design: Rebaz Abdul Rashid",
         "Combat system: Rebaz Abdul Rashid & Malik Zahir",
         "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund",
-        "Specialtack till: Johanna Stode, Stone Depth teamet & ChatGPT",
+        "Specialtack till: Johanna Stode & ChatGPT",
     ]
     for x in credits:
         for i in x:
@@ -171,7 +171,7 @@ def draku_intro():
 
 def draku_outro():
     text = f"""
-    Precis innan du når ingången vänder Draku plötsligt om och säger: "Innan jag kan släppa in dig måste du svara på en gåta.
+    Precis innan du når ingången vänder Draku plötsligt om och säger: "Innan jag kan släppa in dig måste du svara på en fråga.
     Svara med bara siffror annars straffar jag dig!"
     """
     for ord in text:
@@ -181,7 +181,7 @@ def draku_outro():
      gata = int(input("Vilket år är Stone Depth skaparen Rebaz född?"))
      if gata == 2006:
         print("""
-        Grattis du svarade rätt på gåtan. 
+        Grattis du svarade rätt på frågan. 
         Nu kan jag släppa in dig!
         Hoppas att looten du får här hjälper dig att besegra monstret.
             """)
@@ -215,3 +215,27 @@ def draku_outro():
 
 draku_intro()
 draku_outro()
+custom.loot()
+custom.ending()
+
+def credit():
+    print("\nTack för att du spelade Stone Depth 2.0\nCredits visas snart...")
+    credits = [
+        "Credits:",
+        "Inspiration: Stone Depth",
+        "Huvudutvecklare: Rebaz Abdul Rashid",
+        "Story: Rebaz Abdul Rashid & ChatGPT",
+        "Design: Rebaz Abdul Rashid",
+        "Combat system: Rebaz Abdul Rashid & Malik Zahir",
+        "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund",
+        "Specialtack till: Johanna Stode & ChatGPT",
+    ]
+    for x in credits:
+        for i in x:
+            print(i, end='', flush=True)
+            time.sleep(0.03)
+        time.sleep(1)
+        print()
+    
+
+credit()
