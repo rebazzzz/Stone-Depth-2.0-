@@ -92,7 +92,9 @@ intro()
 bat.bat()
 print(f"""
       Med en plötslig och grym attack känner du dess vassa klor nära din hud.
-      Fladdermusen hotar: Jag vet varför du är här {spelare}. 
+      Fladdermusen hotar: Jag vet varför du är hä
+      
+      r {spelare}. 
       Jag kommer suga ut allt ditt blod!
         
     """)
@@ -227,7 +229,7 @@ def credit():
         "Story: Rebaz Abdul Rashid & ChatGPT",
         "Design: Rebaz Abdul Rashid",
         "Combat system: Rebaz Abdul Rashid & Malik Zahir",
-        "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund",
+        "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund, Rangin Abdul Rashid",
         "Specialtack till: Johanna Stode & ChatGPT",
     ]
     for x in credits:
