@@ -212,4 +212,3 @@ def ending():
         else:
             print("Du kan inte undvika att fatta ett beslut! Skriv 1 eller 2")
 
-ending()
