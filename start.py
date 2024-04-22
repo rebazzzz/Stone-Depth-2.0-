@@ -28,7 +28,7 @@ def credits():
         "Story: Rebaz Abdul Rashid & ChatGPT",
         "Design: Rebaz Abdul Rashid",
         "Combat system: Rebaz Abdul Rashid & Malik Zahir",
-        "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund",
+        "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund, Rangin Abdul Rashid",
         "Specialtack till: Johanna Stode & ChatGPT",
     ]
     for x in credits:
