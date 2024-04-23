@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import PySimpleGUI as sg, start
 
 # def fonster(theme):
 #     sg.theme(theme)
@@ -70,12 +70,13 @@ def create_window(theme):
     sg.theme(theme)
     sg.set_options(font = "Franklin 14", button_element_size = (4,1,5))
     button_size = (3,2)
+    button_1_2 = (2,2)
     layout = [[sg.Text(
         "", font = "Franklin 26", justification = "right", expand_x = True, pad = (10,20), right_click_menu = theme_menu, key = "-TEXT-")],      
          [sg.Button("Options"), sg.Button("Start")],
-         [sg.Button("↑", size = button_size), sg.Button("🎒", size = button_size), sg.Push(), sg.Button("➀", size = button_size)],
-         [sg.Button("←", size = button_size), sg.Button("→", size = button_size), sg.Push(), sg.Button("➁", size = button_size), sg.Push(), sg.Button("➂", size = button_size)],
-         [sg.Button("↓", size = button_size)],
+         [sg.Push(), sg.Push(),sg.Push(), sg.Push(), sg.Button("↑", size = button_size), sg.Button("🎒", size = button_size),sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Button("➀", size = button_size), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push()],
+         [sg.Button("←", size = button_size), sg.Push(), sg.Push(), sg.Push() ,sg.Button("→", size = button_size), sg.Push(), sg.Push(), sg.Button("➁", size = button_1_2), sg.Push() ,sg.Push() ,sg.Push(), sg.Button("➂", size = button_size), sg.Push(), sg.Push()],
+         [sg.Push(), sg.Button("↓", size = button_size), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push()],
          
     ]
     return sg.Window("Stone Depth 2.0", layout)
@@ -83,8 +84,6 @@ def create_window(theme):
 theme_menu = ["menu",["LightGrey1","DarkTeal1","DarkGray8", "DarkRed", "BluePurple", "BrightColors", "BrownBlue", "Dark",]]
 window = create_window("BrownBlue") 
 
-cn = []
-op = []
 
 while True:
     event, values = window.read()
@@ -95,17 +94,11 @@ while True:
         window.close()
         window = create_window(event)
     
-    if event in ["0","1","2","3","4","5","6","7","8","9","."]:
-        cn.append(event)
-        num_string = "".join(cn)
-        window["-TEXT-"].update(num_string)
+    if event in ["1","➁","3"]:
+        start.Stone_Depth_2_0()
         
-    if event in ["+","-","/","*"]:
-        op.append("".join(cn))
-        cn = []
-        op.append(event)
-        print(op)
-        window["-TEXT-"].update("")
+    if event in ["Start"]:
+        start.Stone_Depth_2_0()
         
     if event == "Enter":
         op.append("".join(cn))
