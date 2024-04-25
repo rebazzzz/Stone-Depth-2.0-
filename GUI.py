@@ -1,4 +1,4 @@
-import PySimpleGUI as sg, start
+import PySimpleGUI as sg, start, bat
 
 # def fonster(theme):
 #     sg.theme(theme)
@@ -90,15 +90,23 @@ while True:
     if event == sg.WIN_CLOSED:
         break
     
+    if event in ["Start"]:
+        start.title()
+        start.start_screen()
+        start.intro()
+        start.bat_dialog()
+        bat.combatguide()
     if event in theme_menu[1]:
         window.close()
         window = create_window(event)
     
     if event in ["1","➁","3"]:
-        start.Stone_Depth_2_0()
+        pass
         
-    if event in ["Start"]:
-        start.Stone_Depth_2_0()
+    
+
+
+     
         
     if event == "Enter":
         op.append("".join(cn))
