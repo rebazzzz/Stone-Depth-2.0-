@@ -223,24 +223,24 @@ def bat_dialog():
 # custom.loot()
 # custom.ending()
 
-# def credit():
-#         print("\nTack för att du spelade Stone Depth 2.0\nCredits visas snart...")
-#         credits = [
-#             "Credits:",
-#             "Inspiration: Stone Depth",
-#             "Huvudutvecklare: Rebaz Abdul Rashid",
-#             "Story: Rebaz Abdul Rashid & ChatGPT",
-#             "Design: Rebaz Abdul Rashid",
-#             "Combat system: Rebaz Abdul Rashid & Malik Zahir",
-#             "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund, Rangin Abdul Rashid",
-#             "Specialtack till: Johanna Stode & ChatGPT",
-#         ]
-#         for x in credits:
-#             for i in x:
-#                 print(i, end='', flush=True)
-#                 time.sleep(0.03)
-#             time.sleep(1)
-#             print()
+def credit():
+        print("\nTack för att du spelar Stone Depth 2.0\nCredits visas snart...")
+        credits = [
+            "Credits:",
+            "Inspiration: Stone Depth",
+            "Huvudutvecklare: Rebaz Abdul Rashid",
+            "Story: Rebaz Abdul Rashid & ChatGPT",
+            "Design: Rebaz Abdul Rashid",
+            "Combat system: Rebaz Abdul Rashid & Malik Zahir",
+            "Testare: Veljko Jovic, David Wroblewski, Malik Zahir, Johanna Stode, Emin Kosovac, Edvin Schalin, Sixten Wilde & Victor Nordlund, Rangin Abdul Rashid",
+            "Specialtack till: Johanna Stode & ChatGPT",
+        ]
+        for x in credits:
+            for i in x:
+                print(i, end='', flush=True)
+                time.sleep(0.03)
+            time.sleep(1)
+            print()
         
 
 # credit()

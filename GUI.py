@@ -1,5 +1,4 @@
-import PySimpleGUI as sg, start, bat
-
+import PySimpleGUI as sg, start, bat, os, time; from bat import player_hp, pickaxe_dmg, enemy_hp, vapen, bat_HP, yxa_dmg, magisktlubba_dmg, magisktlubba_uses, fel_combat_input
 # def fonster(theme):
 #     sg.theme(theme)
 #     sg.set_options(font="Franklin 15", button_element_size=(6, 3))
@@ -70,13 +69,13 @@ def create_window(theme):
     sg.theme(theme)
     sg.set_options(font = "Franklin 14", button_element_size = (4,1,5))
     button_size = (3,2)
-    button_1_2 = (2,2)
+
     layout = [[sg.Text(
         "", font = "Franklin 26", justification = "right", expand_x = True, pad = (10,20), right_click_menu = theme_menu, key = "-TEXT-")],      
-         [sg.Button("Options"), sg.Button("Start")],
-         [sg.Push(), sg.Push(),sg.Push(), sg.Push(), sg.Button("↑", size = button_size), sg.Button("🎒", size = button_size),sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Button("➀", size = button_size), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push()],
-         [sg.Button("←", size = button_size), sg.Push(), sg.Push(), sg.Push() ,sg.Button("→", size = button_size), sg.Push(), sg.Push(), sg.Button("➁", size = button_1_2), sg.Push() ,sg.Push() ,sg.Push(), sg.Button("➂", size = button_size), sg.Push(), sg.Push()],
-         [sg.Push(), sg.Button("↓", size = button_size), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push()],
+         [sg.Button("Credits"), sg.Button("Start")],
+         [sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push(), sg.Push() ,sg.Push(), sg.Push(),sg.Push(), sg.Button("➀", size = button_size),sg.Push(), sg.Push() ,sg.Push(), sg.Button("🎒", size = button_size)],
+         [sg.Button("➁", size = button_size), sg.Push() ,sg.Push() ,sg.Push(), sg.Button("➂", size = button_size), sg.Push(), sg.Push()],
+         []
          
     ]
     return sg.Window("Stone Depth 2.0", layout)
@@ -84,6 +83,76 @@ def create_window(theme):
 theme_menu = ["menu",["LightGrey1","DarkTeal1","DarkGray8", "DarkRed", "BluePurple", "BrightColors", "BrownBlue", "Dark",]]
 window = create_window("BrownBlue") 
 
+def spelare_attack():
+    global enemy_hp   
+    global magisktlubba_uses 
+    global vapen
+    attack = int(input("Ange siffran till vapnet du vill attackera fladdermusen med:"))
+
+    if attack == 1:
+        enemy_hp -= pickaxe_dmg
+
+        if enemy_hp < 0:
+            pass
+        else:
+            bat_HP()
+            print("""Du hör ett skrik från fladdermusen när din pickaxe träffar den.
+                  """)
+            
+
+    elif attack == 2:
+        enemy_hp -= yxa_dmg
+
+        if enemy_hp < 0:
+            pass
+        else:
+            bat_HP()
+            print("""Din yxa biter djupt in i fladdermusens vinge, vilket gör ett hål i den.
+                  """)
+            
+
+    elif attack == 3 and magisktlubba_uses < 1:
+         enemy_hp -= magisktlubba_dmg
+         magisktlubba_uses += 1
+         print("""Din magiska klubba gör väldigt mycket skada 😉, men fladdermusen fångar och slänger iväg din magiska klubba efter din attack!""")
+    
+         if enemy_hp <= 0:
+            pass
+         
+         else:
+             bat_HP()
+
+    elif attack == 3 and magisktlubba_uses == 1:
+        print("""Fladdermusen slängde iväg din magiska klubba, så du kan inte använda den för tillfället.
+              """)
+          
+    else:
+        print("""Använd rätt vapen!""")
+        fel_combat_input()
+
+def combatloop():
+    global magisktlubba_uses
+    while player_hp > 0 or enemy_hp > 0:
+        bat.spelare_attack()
+        time.sleep(0.5)
+        if enemy_hp <= 0:
+            print("Ett dött tystnad faller över när fladdermusen kollapsar till marken.")
+            time.sleep(1.5)
+            print("Du springer och plockar upp din magiska klubba.")
+            magisktlubba_uses = 0
+            time.sleep(2)
+            print("Du känner en våg av lättnad skölja över dig när fladdermusen har äntligen besegrats och du har fått tillbaka din magiska klubba 😉.")
+            print("Du går djupare in i grottan...")
+            time.sleep(12)
+            os.system("cls" if os.name == "nt" else "clear")
+            print("... Plötsligt rasar ingången bakom dig. Det finns inget återvändande nu!")
+            break
+
+        bat.enemy_attack()
+        time.sleep(0.5)
+        if player_hp <= 0:
+            print("GAME OVER")
+            break
 
 while True:
     event, values = window.read()
@@ -94,19 +163,22 @@ while True:
         start.title()
         start.start_screen()
         start.intro()
+        bat.bat()
         start.bat_dialog()
         bat.combatguide()
+        
     if event in theme_menu[1]:
         window.close()
         window = create_window(event)
     
-    if event in ["1","➁","3"]:
-        pass
+    if event in ["➀","➁","➂"]:
+        bat.forsta_enemy()
+
+    if event in ["Credits"]:
+        start.credit()
         
-    
-
-
-     
+    if event in ["🎒"]:
+        bat.combatguide()
         
     if event == "Enter":
         op.append("".join(cn))
