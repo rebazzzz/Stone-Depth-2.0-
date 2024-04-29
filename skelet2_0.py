@@ -7,6 +7,8 @@ gyllene_yxa = 45
 magisktlubba_dmg = 50
 magisktlubba_uses = 1
 
+
+
 vapen = {
     "Pickaxe 🪓": {"dmg": 25},
     "Gyllene Yxa 🔨🧈": {"dmg": 45},
@@ -143,13 +145,14 @@ def skelet():
                                       """)
     
 
-def combatguide():
+def skelet_combatguide():
    global vapen
    time.sleep(2)
    print("Inventory:")
    for i, weapon in enumerate(inventory, 1):
       print(f"{i}. {weapon}, Skada: {vapen[weapon]['dmg']}")
       time.sleep(1)
+      
     
 
 def combatloop():
@@ -173,6 +176,6 @@ def combatloop():
             break
 
 def andra_enemy():
-    combatguide()
+    skelet_combatguide()
     combatloop()
 

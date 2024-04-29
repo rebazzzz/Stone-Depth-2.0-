@@ -1,11 +1,11 @@
 import time, os
-
 enemy_hp = 90
 player_hp = 100
 pickaxe_dmg = 25
 yxa_dmg = 35
 magisktlubba_dmg = 50
 magisktlubba_uses = 0
+bat_alive = True
 
 vapen = {
     "Pickaxe 🪓": {"dmg": 25},
@@ -141,6 +141,7 @@ def combatguide():
    for i, weapon in enumerate(inventory, 1):
       print(f"{i}. {weapon}, Skada: {vapen[weapon]['dmg']}")
       time.sleep(1)
+
     
 
 def combatloop():
@@ -149,6 +150,7 @@ def combatloop():
         spelare_attack()
         time.sleep(0.5)
         if enemy_hp <= 0:
+            bat_alive == False
             print("Ett dött tystnad faller över när fladdermusen kollapsar till marken.")
             time.sleep(1.5)
             print("Du springer och plockar upp din magiska klubba.")
