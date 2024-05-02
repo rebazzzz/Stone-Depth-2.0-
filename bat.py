@@ -43,7 +43,7 @@ def fel_combat_input():
 
 
 
-def spelare_attack(val):
+def spelare_attack():
     global enemy_hp
     global magisktlubba_uses
     
@@ -135,6 +135,7 @@ def combatguide():
    for i, weapon in enumerate(inventory, 1):
       print(f"{i}. {weapon}, Skada: {vapen[weapon]['dmg']}")
       time.sleep(1)
+      
 
     
 

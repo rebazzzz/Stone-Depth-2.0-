@@ -1,4 +1,4 @@
-import PySimpleGUI as sg, start, bat, skelet2_0; from bat import spelare_attack, enemy_attack, bat_alive
+import PySimpleGUI as sg, start, bat, skelet2_0; from bat import bat_alive, spelare_attack, enemy_attack
 start_knapp = 0
 
 val = {
@@ -21,7 +21,7 @@ def create_window(theme):
     return sg.Window("Kontroller", layout)
 
 theme_menu = ["menu",["LightGrey1","DarkTeal1","DarkGray8", "DarkRed", "BluePurple", "BrightColors", "BrownBlue", "Dark",]]
-window = create_window("Rebaz") 
+window = create_window("DarkTeal9") 
 
 print("Tryck på start på kontrollen för att starta spelet!")
 while True:
@@ -31,12 +31,13 @@ while True:
     
     if event in ["Start"] and start_knapp == 0:
         start_knapp = start_knapp + 1
-        start.title()
-        start.start_screen()
-        start.intro()
-        bat.bat()
-        start.bat_dialog()
+        # start.title()
+        # start.start_screen()
+        # start.intro()
+        # bat.bat()
+        # start.bat_dialog()
         bat.combatguide()
+       
         
     if event in ["Start"] and start_knapp <= 0: 
         print("Du har redan tryckt på start!")
@@ -48,7 +49,7 @@ while True:
     if event in val:
         weapon_choice = val[event]
         print("Ange siffran du vill attackera fladdermusen med:")
-        spelare_attack(weapon_choice) 
+        spelare_attack(val) 
         enemy_attack() 
      
 
