@@ -1,10 +1,6 @@
-import PySimpleGUI as sg, start, bat, skelet2_0; from bat import bat_alive, spelare_attack, enemy_attack
+import PySimpleGUI as sg, start, bat, os, skelet2_0, time; from bat import player_hp, pickaxe_dmg, enemy_hp, vapen, bat_HP, yxa_dmg, magisktlubba_dmg, magisktlubba_uses, fel_combat_input, bat_alive
 start_knapp = 0
 
-val = {
-    "➀": 1,
-    "➁": 2,
-    "➂": 3}
 def create_window(theme):
     sg.theme(theme)
     sg.set_options(font = "Franklin 14", button_element_size = (4,1,5))
@@ -37,8 +33,7 @@ while True:
         # bat.bat()
         # start.bat_dialog()
         bat.combatguide()
-       
-        
+        print("Ange siffran du vill attackera fladdermusen med:")
     if event in ["Start"] and start_knapp <= 0: 
         print("Du har redan tryckt på start!")
         
@@ -46,13 +41,8 @@ while True:
         window.close()
         window = create_window(event)
     
-    if event in val:
-        weapon_choice = val[event]
-        print("Ange siffran du vill attackera fladdermusen med:")
-        spelare_attack(val) 
-        enemy_attack() 
-     
-
+    if event in ["➀","➁","➂"]:
+        pass
     if event in ["Credits"]:
         start.credit()
         

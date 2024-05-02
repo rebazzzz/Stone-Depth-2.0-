@@ -103,16 +103,16 @@ def bat_dialog():
 # bat_dialog()
 # bat.forsta_enemy()
 
-def enemy1_enemy2():
-        text = """
-        Med hjärtat bultande av både spänning och fruktan fortsätter du din färd djupare in i grottans skrämmande djup. 
-        Dina fotsteg ekar mot de steniga väggarna. Plötsligt, i mörkret framför dig, hör du ljudet av skallrande ben och det döda, kusliga skrattet av ett skelett.
-        """
-        for ord in text:
-            print(ord, end='', flush=True)
-            time.sleep(0.05)
+# def enemy1_enemy2():
+#         text = """
+#         Med hjärtat bultande av både spänning och fruktan fortsätter du din färd djupare in i grottans skrämmande djup. 
+#         Dina fotsteg ekar mot de steniga väggarna. Plötsligt, i mörkret framför dig, hör du ljudet av skallrande ben och det döda, kusliga skrattet av ett skelett.
+#         """
+#         for ord in text:
+#             print(ord, end='', flush=True)
+#             time.sleep(0.05)
 
-
+# enemy1_enemy2()
 
 # skelet2_0.skelet()
 # def skelet_dialog():
