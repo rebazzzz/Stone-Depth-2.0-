@@ -6,15 +6,12 @@ yxa_dmg = 35
 magisktlubba_dmg = 50
 magisktlubba_uses = 0
 bat_alive = True
-
 vapen = {
     "Pickaxe 🪓": {"dmg": 25},
     "Yxa 🔨": {"dmg": 35},
     "Magisktlubba 🍭✨": {"dmg": 50}
 }
-
 inventory = list(vapen.keys())
-
 def spelare_HP():
     Hp = player_hp // 10
     symbol = "❤️ " * Hp
@@ -22,8 +19,6 @@ def spelare_HP():
     time.sleep(1)
     print("""Du känner smärtan bränna genom din kropp varje gång fladdermusen biter dig.
           """)
-
-
 def enemy_attack():
     global player_hp
     damage = 20
@@ -32,12 +27,10 @@ def enemy_attack():
         print(f"Du dog 💀")
     else:
         spelare_HP()
-
 def bat_HP():
     bat_hp = enemy_hp // 5
     bat_symbol = "🦇 " * bat_hp
     print(f"""Fladermusens HP:{bat_symbol}""")
-
 def fel_combat_input():
     print("Du tar fortfarande skada om du skriver fel input! Skriv 1, 2 eller 3")
 
@@ -46,48 +39,50 @@ def fel_combat_input():
 def spelare_attack(val):
     global enemy_hp
     global magisktlubba_uses
-    
+
 
     if val == 1:
         enemy_hp -= pickaxe_dmg
-
         if enemy_hp < 0:
             pass
         else:
             bat_HP()
-            print("""Du hör ett skrik från fladdermusen när din pickaxe träffar den.
-                  """)
+            print("""Du hör ett skrik från fladdermusen när din pickaxe träffar den.""")
             
 
-    elif attack == 2:
+    elif val == 2:
         enemy_hp -= yxa_dmg
 
         if enemy_hp < 0:
             pass
         else:
             bat_HP()
-            print("""Din yxa biter djupt in i fladdermusens vinge, vilket gör ett hål i den.
-                  """)
+            print("""Din yxa biter djupt in i fladdermusens vinge, vilket gör ett hål i den.""")
             
 
-    elif attack == 3 and magisktlubba_uses < 1:
-         enemy_hp -= magisktlubba_dmg
-         magisktlubba_uses += 1
-         print("""Din magiska klubba gör väldigt mycket skada 😉, men fladdermusen fångar och slänger iväg din magiska klubba efter din attack!""")
-    
-         if enemy_hp <= 0:
-            pass
-         
-         else:
-             bat_HP()
+    elif val == 3 and magisktlubba_uses < 1:
+        enemy_hp -= magisktlubba_dmg
+        magisktlubba_uses += 1
+        print("""Din magiska klubba gör väldigt mycket skada 😉, men fladdermusen fångar och slänger iväg din magiska klubba efter din attack!""")
 
-    elif attack == 3 and magisktlubba_uses == 1:
-        print("""Fladdermusen slängde iväg din magiska klubba, så du kan inte använda den för tillfället.
-              """)
-          
+        if enemy_hp <= 0:
+            pass
+
+        else:
+            bat_HP()
+
+    elif val == 3 and magisktlubba_uses == 1:
+        print("""Fladdermusen slängde iväg din magiska klubba, så du kan inte använda den för tillfället.""")
+
     else:
         print("""Använd rätt vapen!""")
         fel_combat_input()
+
+
+
+def bat():
+    print(""" 
+          Screeeee!""")
 
 
 def bat():
