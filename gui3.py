@@ -1,21 +1,17 @@
 import PySimpleGUI as sg
-import bat
 import skelet2_0
-import time
 
-start_knapp = 0
-
-def bat_gui2():
+def skelet_gui():
     val = {
         "➀": 1,
         "➁": 2,
         "➂": 3
     }
-    
+
     def create_window(theme):
         sg.theme(theme)
         sg.set_options(font="Franklin 14", button_element_size=(4, 1, 5))
-        button_size = (6, 3) 
+        button_size = (6, 3)
         layout = [
             [sg.Text("Välkommen till Stone Depth 2.0", font=("Helvetica", 20), text_color="white", 
                      background_color="midnightblue", pad=(0, 20))],
@@ -42,21 +38,21 @@ def bat_gui2():
 
         if event in val:
             weapon_choice = val[event]
-            print("Ange siffran du vill attackera fladdermusen med:")
-            bat.spelare_attack(weapon_choice)
-            if bat.enemy_hp > 0:
-                bat.enemy_attack()
+            print("Ange siffran du vill attackera skelettet med:")
+            skelet2_0.spelare_attack(weapon_choice)
+            if skelet2_0.enemy_hp > 0:
+                skelet2_0.enemy_attack()
             else:
-                print("Fladdermusen har besegrats!")
+                print("Skelettet har besegrats!")
                 window.close()
                 break
 
         if event == "🎒":
-            bat.combatguide()
-            if not bat.bat_alive:
+            skelet2_0.skelet_combatguide()
+            if not skelet2_0.enemy_hp:
                 skelet2_0.skelet_combatguide()
 
     window.close()
 
 if __name__ == "__main__":
-    bat_gui2()
+    skelet_gui()

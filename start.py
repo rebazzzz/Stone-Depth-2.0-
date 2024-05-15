@@ -103,76 +103,76 @@ def bat_dialog():
 # bat_dialog()
 # bat.forsta_enemy()
 
-# def enemy1_enemy2():
-#         text = """
-#         Med hjärtat bultande av både spänning och fruktan fortsätter du din färd djupare in i grottans skrämmande djup. 
-#         Dina fotsteg ekar mot de steniga väggarna. Plötsligt, i mörkret framför dig, hör du ljudet av skallrande ben och det döda, kusliga skrattet av ett skelett.
-#         """
-#         for ord in text:
-#             print(ord, end='', flush=True)
-#             time.sleep(0.05)
+def enemy1_enemy2():
+        text = """
+        Med hjärtat bultande av både spänning och fruktan fortsätter du din färd djupare in i grottans skrämmande djup. 
+        Dina fotsteg ekar mot de steniga väggarna. Plötsligt, i mörkret framför dig, hör du ljudet av skallrande ben och det döda, kusliga skrattet av ett skelett.
+        """
+        for ord in text:
+            print(ord, end='', flush=True)
+            time.sleep(0.05)
 
 # enemy1_enemy2()
 
 # skelet2_0.skelet()
-# def skelet_dialog():
-#         text = """
-#         Du! Jag trodde att fladdermusen hade gjort slut på dig! Men nu spelar det ingen roll vad den gjorde, för jag ska se till att du inte lämnar den här grottan levande
-#         Skelettets kusliga skratt fyller luften när han attackerar dig, du ser att han håller i en glimmande gyllene yxa. 
-#         Med snabb reflex sparkar du ner honom och griper tag i yxan. Den är nu din. 
-#         Med den nya yxan i handen står du redo att möta skelettet
-#         """
+def skelet_dialog():
+        text = """
+        Du! Jag trodde att fladdermusen hade gjort slut på dig! Men nu spelar det ingen roll vad den gjorde, för jag ska se till att du inte lämnar den här grottan levande
+        Skelettets kusliga skratt fyller luften när han attackerar dig, du ser att han håller i en glimmande gyllene yxa. 
+        Med snabb reflex sparkar du ner honom och griper tag i yxan. Den är nu din. 
+        Med den nya yxan i handen står du redo att möta skelettet
+        """
 
-#         for ord in text:
-#             print(ord, end='', flush=True)
-#             time.sleep(0.05)
+        for ord in text:
+            print(ord, end='', flush=True)
+            time.sleep(0.05)
 # skelet_dialog()
 # skelet2_0.andra_enemy()
 
-# def draku_intro():
-#         text = f"""
-#         Djupare in i grottan möter du en mystisk staty med namnet Draku Sraku. 
-#         Dess ögon lyser i mörkret när den plötsligt talar till dig. "Jag vet allt om dig, {spelare}" säger den med en viskande röst.
+def draku_intro():
+        text = f"""
+        Djupare in i grottan möter du en mystisk staty med namnet Draku Sraku. 
+        Dess ögon lyser i mörkret när den plötsligt talar till dig. "Jag vet allt om dig, {spelare}" säger den med en viskande röst.
 
-#         Du: Hur kan jag lita på dig?
-#         Draku: Jag vet varför du är här. Din familj skickade dig hit för att bli av med dig!
-#         Ingen i tusentals år har lyckats att döda monstret i den här grottan.
-#         Din familj lurade dig!
+        Du: Hur kan jag lita på dig?
+        Draku: Jag vet varför du är här. Din familj skickade dig hit för att bli av med dig!
+        Ingen i tusentals år har lyckats att döda monstret i den här grottan.
+        Din familj lurade dig!
 
-#         Du: Hur kunde dem göra så mot mig?! 😭😭
+        Du: Hur kunde dem göra så mot mig?! 😭😭
         
-#         Draku: Följ mig, och jag ska visa dig vägen till ett ställe i grottan där du kan finna bättre loot. 
-#         Det kommer att hjälpa dig att besegra din sista fiende och ta dig ut i grottan levandes. 
+        Draku: Följ mig, och jag ska visa dig vägen till ett ställe i grottan där du kan finna bättre loot. 
+        Det kommer att hjälpa dig att besegra din sista fiende och ta dig ut i grottan levandes. 
         
-#         Du känner en blandning av spänning och oro när du följer statyn in i djupet av grottan, med förhoppningen om att den har svaren och resurserna du behöver för att överleva.
-#         """
-#         print("""       
+        Du känner en blandning av spänning och oro när du följer statyn in i djupet av grottan, med förhoppningen om att den har svaren och resurserna du behöver för att överleva.
+        """
+        print("""       
     
-#                 )   )\/ ( ( (
-#               ((  /     ))\))  (  )    
-#                 )\(          |  ))( )  (
-#                ))/   |          )/  \((  ) 1
-#               (      .        -.     V )/   )   
-#             /     .   \            .       \))   
-#                 (  | |   )            .    (  
-#               ,'))     \ /          \( `.    )
-#              ,'/__      ))            __`.  /
-#               | /  ___   ( \/     ___   \ | ( 
-#              |/  /   \__      __/   \   \|  ))
-#            . |>  \      | __ |      /   <|  /
-#             )/    \____/ :..: \____/     \ <
-#            (|__  .      / ;: \          __| )  
-#            \)  ~--_     --  --      _--~    /  
-#             |  ||               ||  |   (  /
-#              .  |  ||_             _||  |  /
-#               :  |  ~V+-I_I_I-+V~  |  : (.
-#                \:  T\   _     _   /T  : ./
-#                :    T^T T-+-T T^T    ;<
-#                 \..`_       -+-       _'
-#                . `--=.._____..=--'. ./     """)
-#         for ord in text:
-#             print(ord, end='', flush=True)
-#             time.sleep(0.05)
+                )   )\/ ( ( (
+              ((  /     ))\))  (  )    
+                )\(          |  ))( )  (
+               ))/   |          )/  \((  ) 1
+              (      .        -.     V )/   )   
+            /     .   \            .       \))   
+                (  | |   )            .    (  
+              ,'))     \ /          \( `.    )
+             ,'/__      ))            __`.  /
+              | /  ___   ( \/     ___   \ | ( 
+             |/  /   \__      __/   \   \|  ))
+           . |>  \      | __ |      /   <|  /
+            )/    \____/ :..: \____/     \ <
+           (|__  .      / ;: \          __| )  
+           \)  ~--_     --  --      _--~    /  
+            |  ||               ||  |   (  /
+             .  |  ||_             _||  |  /
+              :  |  ~V+-I_I_I-+V~  |  : (.
+               \:  T\   _     _   /T  : ./
+               :    T^T T-+-T T^T    ;<
+                \..`_       -+-       _'
+               . `--=.._____..=--'. ./     """)
+        for ord in text:
+            print(ord, end='', flush=True)
+            time.sleep(0.05)
 
 # def draku_outro():
 #         text = f"""
